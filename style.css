@@ -1,0 +1,233 @@
+html,body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background-color: #000000; /*#280B29*/
+	background: radial-gradient(ellipse at center, rgb(0, 0, 30) 0%, rgb(1, 0, 12) 100%);
+}
+
+#stars {
+	display: block;
+	position: relative;
+    top: 0;
+    right: 0;
+	width: 100%;
+	height: 16rem;
+	height: 100vh;
+	z-index: -1;
+    opacity: 0.5;
+}
+
+#content{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+header{
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-family: "Libre Baskerville", serif;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+h1{
+    font-size: 40px;
+    margin: 0.5rem auto 0 auto;
+}
+h2{
+    font-size: 25px;
+    opacity: 0.2;
+    margin: 0 auto 1rem auto;
+}
+
+#row{
+    position: absolute;
+    top: calc(50% - 150px);
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#projects{
+    /*position: absolute;
+    top: 0;
+    left: 2rem;*/
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px;
+    float: left;
+    margin-left: 1rem;
+}
+#projects a{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    display: inline-block;
+    padding-right: 20px; /* Leave space for the arrow */
+    transition: transform 0.2s ease-in-out;
+    margin: 0 0 1rem 0;
+    width: fit-content;
+}
+#projects #contactLink{
+    margin-top: 1rem;
+}
+
+#projects a::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, right 0.2s ease-in-out;
+    font-size: 30px;
+}
+#projects a:hover {
+    transform: translateX(30px); /* Move the link to the right */
+}
+#projects a:hover::after {
+    opacity: 1;
+    right: -20px; /* Arrow will appear just to the right of the link */
+}
+
+#quote{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    /*color: rgb(148, 148, 148);*/
+    color: white;
+    font-size: 40px;
+    width: 50%;
+    /*position: absolute;
+    right: 2rem;
+    top: 0;*/
+    text-align: right;
+    margin: 0 2rem 0 2rem;
+}
+.t1{
+    opacity: 0.2;
+}
+.t2{
+    opacity: 1;
+}
+
+@media (800px <= width < 1000px){
+    #quote{
+        width: 60%;
+        font-size: 35px;
+    }
+    #projects a{
+        font-size: 25px;
+    }
+}
+@media (width <= 700px){
+    #row{
+        flex-direction: column;
+        position: relative;
+        top: 0;
+    }
+    #row *{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
+    #projects{
+        margin-bottom: 3rem;
+    }
+    footer{
+        position: relative;
+    }
+}
+@media(500px <= width < 800px){
+    #quote{
+        width: 80%;
+        font-size: 30px;
+    }
+    #projects a{
+        font-size: 20px;
+    }
+}
+@media(width < 500px){
+    header{
+        display: flex;
+        flex-direction: row;
+        margin: 0.5rem auto 3rem auto;
+        height: 3rem;
+        opacity: 0.2;
+    }
+    h1, h2{
+        width: 50%;
+        margin: 0;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+    }
+    h2{
+        font-size: 12px;
+        opacity: 1;
+    }
+    #quote{
+        width: 90%;
+        font-size: 25px;
+    }
+    #projects a{
+        font-size: 18px;
+    }
+}
+
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    float: left;
+    margin: 2rem auto auto auto;
+    position: absolute;
+    bottom: 0;
+    font-family: "Poppins", serif;
+}
+footer h4{
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+footer p{
+    font-size: 0.7rem;
+    font-weight: 300;
+    line-height: 1.25rem;
+    color: white;
+    opacity: 0.2;
+    margin:0;
+}
+.media .fa, .fa-solid{
+    color: var(--blue);
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 1rem 0;
+    transition: color 0.3s ease-in-out;
+}
+.media .fa:hover, .fa-solid:hover{
+    color: var(--beige);
+}
